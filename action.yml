@@ -1,4 +1,4 @@
-name: "Export Workflow Run Logs"
+name: "Export Workflow Run Logs to S3/Blob"
 description: "An action to automatically export GitHub Actions Workflow run logs to popular cloud storage solutions like S3." # NOTE: This field has a 125 character limit
 
 branding:
