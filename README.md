@@ -1,6 +1,6 @@
 # export-workflow-logs
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/adf5dcf95b53da6c741f/maintainability)](https://codeclimate.com/github/timorthi/export-workflow-logs/maintainability) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 `export-workflow-logs` is a GitHub Action to automatically export the logs of a GitHub Actions Workflow run to popular cloud storage solutions like Amazon S3 and Azure Blob Storage.
 
@@ -40,8 +40,9 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
           destination: s3
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets. AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env. AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ env.AWS_SESSION_TOKEN }}
           aws-region: us-west-1
           s3-bucket-name: my-workflow-logs
           # https://docs.github.com/developers/webhooks-and-events/webhooks/webhook-events-and-payloads?actionType=requested#workflow_run
