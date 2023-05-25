@@ -37,6 +37,7 @@ func TestValidateActionInputs(t *testing.T) {
 				inputKeyDestination:        "s3",
 				inputKeyAWSAccessKeyID:     "abc",
 				inputKeyAWSSecretAccessKey: "abc",
+				inputKeyAWSSessionToken:    "abc",
 				inputKeyAWSRegion:          "someregion",
 				inputKeyS3BucketName:       "my-bucket",
 				inputKeyS3Key:              "some/key",
@@ -49,6 +50,7 @@ func TestValidateActionInputs(t *testing.T) {
 				s3Inputs: &S3ActionInputs{
 					awsAccessKeyID:     "abc",
 					awsSecretAccessKey: "abc",
+					awsSessionToken:    "abc",
 					awsRegion:          "someregion",
 					bucketName:         "my-bucket",
 					key:                "some/key",
@@ -63,6 +65,7 @@ func TestValidateActionInputs(t *testing.T) {
 				inputKeyDestination:        "s3",
 				inputKeyAWSAccessKeyID:     "abc",
 				inputKeyAWSSecretAccessKey: "abc",
+				inputKeyAWSSessionToken:    "abc",
 				// inputKeyAWSRegion intentionally excluded
 				// inputKeyS3BucketName intentionally excluded
 				inputKeyS3Key: "some/key",

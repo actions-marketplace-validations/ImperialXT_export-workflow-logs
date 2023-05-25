@@ -20,6 +20,7 @@ var (
 var (
 	inputAWSAccessKeyID     *string = flag.String(inputKeyAWSAccessKeyID, "", "AWS Access Key ID")
 	inputAWSSecretAccessKey *string = flag.String(inputKeyAWSSecretAccessKey, "", "AWS Secret Access Key")
+	inputAWSSessionToken    *string = flag.String(inputKeyAWSSessionToken, "", "AWS Session Token")
 	inputAWSRegion          *string = flag.String(inputKeyAWSRegion, "us-east-1", "AWS Region for the S3 bucket")
 	inputS3BucketName       *string = flag.String(inputKeyS3BucketName, "", "S3 bucket name")
 	inputS3Key              *string = flag.String(inputKeyS3Key, "", "S3 key")
@@ -37,6 +38,7 @@ var (
 type S3ActionInputs struct {
 	awsAccessKeyID     string
 	awsSecretAccessKey string
+	awsSessionToken    string
 	awsRegion          string
 	bucketName         string
 	key                string
@@ -88,6 +90,7 @@ func validateActionInputs() (ActionInputs, error) {
 		s3Inputs = &S3ActionInputs{
 			awsAccessKeyID:     *inputAWSAccessKeyID,
 			awsSecretAccessKey: *inputAWSSecretAccessKey,
+			awsSessionToken:    *inputAWSSessionToken,
 			awsRegion:          *inputAWSRegion,
 			bucketName:         *inputS3BucketName,
 			key:                *inputS3Key,
@@ -95,6 +98,7 @@ func validateActionInputs() (ActionInputs, error) {
 		inputFlagsToAssertNotEmpty = map[string]string{
 			inputKeyAWSAccessKeyID:     *inputAWSAccessKeyID,
 			inputKeyAWSSecretAccessKey: *inputAWSSecretAccessKey,
+			inputKeyAWSSessionToken:    *inputAWSSessionToken,
 			inputKeyAWSRegion:          *inputAWSRegion,
 			inputKeyS3BucketName:       *inputS3BucketName,
 			inputKeyS3Key:              *inputS3Key,
